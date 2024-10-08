@@ -9,6 +9,8 @@ import Blog from "../pages/user/Blog/Blog";
 import BlogDetail from "../pages/user/BlogDetail/BlogDetail";
 import Profile from "../pages/user/Profile/Profile";
 import Member from "../pages/user/Member/Member";
+import { Employers } from "../pages/user/Membership/Employers/Employers";
+import { DeverloperProfile } from "../pages/user/MyProfile/Freelancers/Freelancers";
 
 const AppRoutes = () => {
   return (
@@ -25,6 +27,7 @@ const AppRoutes = () => {
       {/* Developer Router */}
       <Route path="/members" element={<Member />}></Route>
       <Route path="/members/profile/:userType/:slug" element={<Profile />} />
+      <Route path="/developer-profile" element={<DeverloperProfile />} />
 
       {/* Project Router */}
       <Route path="/projects" element={<Project />} />
@@ -39,8 +42,7 @@ const AppRoutes = () => {
       <Route path="/blog/:slug" element={<BlogDetail />} />
 
       {/* Blog Detail Router */}
-      {/* <Route path="/profile/:userType/:slug" element={<Profile />} /> */}
-
+      {/* <Routes path="/profile/:userType/:slug" element={<Profile />} /> */}
     </Routes>
   );
 };
