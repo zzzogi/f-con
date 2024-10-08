@@ -1,0 +1,48 @@
+.check-drop-menu {
+    position: relative;
+    margin-bottom: 20px; /* Space between filters */
+}
+
+.dropdown-title {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 18px;
+    background-color: #FFF8F5; /* Light background for the title */
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd; /* Border for the dropdown */
+    transition: background-color 0.3s;
+}
+
+.dropdown-title:hover {
+    background-color: #F4E0DD; /* Slightly darker on hover */
+}
+
+.dropdown-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #ddd; /* Border for the list */
+    border-radius: 5px;
+    max-height: 200px; /* Limit the height */
+    overflow-y: auto; /* Scroll if overflow */
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    position: absolute; /* Position it below the title */
+    width: 100%; /* Full width */
+    z-index: 1000; /* Ensure it's on top */
+}
+
+.dropdown-item {
+    padding: 10px 15px; /* Space around items */
+    display: flex;
+    align-items: center; /* Center items vertically */
+}
+
+.dropdown-item:hover {
+    background-color: #f0f0f0; /* Highlight on hover */
+}
+
+.dropdown-item input {
+    margin-right: 10px; /* Space between checkbox and label */
+}
