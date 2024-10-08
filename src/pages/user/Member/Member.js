@@ -10,7 +10,6 @@ import DevCardView from "../../../components/user/DevCardView/DevCardView";
 import CustomSelect from "../../../components/user/CustomSelect/CustomSelect";
 import FilterSide from "../../../components/user/FilterSide/FilterSide";
 
-
 const Member = () => {
   const Members = [
     {
@@ -97,7 +96,6 @@ const Member = () => {
   ];
 
   /* NAVIGATE TO PAGE  ------------------- */
-  
 
   return (
     <div className="Member">

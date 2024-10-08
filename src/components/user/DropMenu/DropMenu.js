@@ -21,6 +21,7 @@ const DropMenu = () => {
     },
     {
       sub: "My profile",
+      href: "/company-profile",
       ref: [],
     },
     {
@@ -59,6 +60,7 @@ const DropMenu = () => {
     },
     {
       sub: "My profile",
+      href: "/developer-profile",
       ref: [],
     },
     {
@@ -79,7 +81,6 @@ const DropMenu = () => {
     },
   ];
 
-
   // Pages data
   const pages = [
     {
@@ -96,7 +97,7 @@ const DropMenu = () => {
       sub: "Register",
       ref: [],
       href: "/register",
-    }
+    },
   ];
 
   const navigate = useNavigate();
@@ -122,7 +123,8 @@ const DropMenu = () => {
               return (
                 <div
                   className={
-                    "sub-nav-item" + (item.ref.length > 0 ? " sub-nav-drop" : "")
+                    "sub-nav-item" +
+                    (item.ref.length > 0 ? " sub-nav-drop" : "")
                   }
                   key={item.sub}
                 >
@@ -160,7 +162,8 @@ const DropMenu = () => {
               return (
                 <div
                   className={
-                    "sub-nav-item" + (item.ref.length > 0 ? " sub-nav-drop" : "")
+                    "sub-nav-item" +
+                    (item.ref.length > 0 ? " sub-nav-drop" : "")
                   }
                   key={item.sub}
                   onClick={() => onNavRoute(item.href ? item.href : "")}
@@ -199,7 +202,8 @@ const DropMenu = () => {
               return (
                 <div
                   className={
-                    "sub-nav-item" + (item.ref.length > 0 ? " sub-nav-drop" : "")
+                    "sub-nav-item" +
+                    (item.ref.length > 0 ? " sub-nav-drop" : "")
                   }
                   key={item.sub}
                   onClick={() => onNavRoute(item.href ? item.href : "")}
@@ -230,7 +234,10 @@ const DropMenu = () => {
         </div>
 
         {/* Blogs */}
-        <div className="nav-item nav-dropmenu" onClick={() => onNavRoute("/blogs")}>
+        <div
+          className="nav-item nav-dropmenu"
+          onClick={() => onNavRoute("/blogs")}
+        >
           <span>Blogs</span>
         </div>
 
