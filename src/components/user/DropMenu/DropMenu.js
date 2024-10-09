@@ -51,8 +51,17 @@ const DropMenu = () => {
   const freelancer = [
     {
       sub: "Projects",
-      ref: [],
-      href: "/projects",
+      href: "",
+      ref: [
+        {
+          sub: "Projects",
+          href: "/projects",
+        },
+        {
+          sub: "Project Details",
+          href: "/project-details",
+        },
+      ],
     },
     {
       sub: "Dashboard",
@@ -104,6 +113,7 @@ const DropMenu = () => {
 
   /* NAVIGATE TO PAGE  ------------------- */
   const onNavRoute = (endpoint) => {
+    console.log(endpoint);
     navigate(endpoint);
   };
 
@@ -127,6 +137,12 @@ const DropMenu = () => {
                     (item.ref.length > 0 ? " sub-nav-drop" : "")
                   }
                   key={item.sub}
+                  onClick={() => {
+                    if (item.ref.length === 0) {
+                      onNavRoute(item.href ? item.href : "#");
+                    }
+                    return;
+                  }}
                 >
                   {item.sub}
                   {item.ref.length > 0 && (
@@ -139,7 +155,10 @@ const DropMenu = () => {
                           <div
                             className="sub-nav-item"
                             key={refer.sub}
-                            onClick={() => onNavRoute(refer.href)}
+                            onClick={() => {
+                              console.log(refer.href);
+                              onNavRoute(refer.href);
+                            }}
                           >
                             {refer.sub}
                           </div>
@@ -166,7 +185,12 @@ const DropMenu = () => {
                     (item.ref.length > 0 ? " sub-nav-drop" : "")
                   }
                   key={item.sub}
-                  onClick={() => onNavRoute(item.href ? item.href : "")}
+                  onClick={() => {
+                    if (item.ref.length === 0) {
+                      onNavRoute(item.href ? item.href : "#");
+                    }
+                    return;
+                  }}
                 >
                   {item.sub}
                   {item.ref.length > 0 && (
@@ -179,7 +203,7 @@ const DropMenu = () => {
                           <div
                             className="sub-nav-item"
                             key={refer.sub}
-                            onClick={onNavRoute(refer.href)}
+                            onClick={() => onNavRoute(refer.href)}
                           >
                             {refer.sub}
                           </div>
@@ -206,7 +230,7 @@ const DropMenu = () => {
                     (item.ref.length > 0 ? " sub-nav-drop" : "")
                   }
                   key={item.sub}
-                  onClick={() => onNavRoute(item.href ? item.href : "")}
+                  onClick={() => onNavRoute(item.href ? item.href : "#")}
                 >
                   {item.sub}
                   {item.ref.length > 0 && (
@@ -219,7 +243,7 @@ const DropMenu = () => {
                           <div
                             className="sub-nav-item"
                             key={refer.sub}
-                            onClick={onNavRoute(refer.href)}
+                            onClick={() => onNavRoute(refer.href)}
                           >
                             {refer.sub}
                           </div>

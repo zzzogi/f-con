@@ -9,8 +9,9 @@ import Blog from "../pages/user/Blog/Blog";
 import BlogDetail from "../pages/user/BlogDetail/BlogDetail";
 import Profile from "../pages/user/Profile/Profile";
 import Member from "../pages/user/Member/Member";
-import { Employers } from "../pages/user/Membership/Employers/Employers";
 import { DeverloperProfile } from "../pages/user/MyProfile/Freelancers/Freelancers";
+import { Employers } from "../pages/user/MyProfile/Employers/Employers";
+import { ProjectDetail } from "../pages/user/ProjectDetail/ProjectDetail";
 
 const AppRoutes = () => {
   return (
@@ -24,10 +25,14 @@ const AppRoutes = () => {
       {/* Register Router */}
       <Route path="/register" element={<Register />} />
 
-      {/* Developer Router */}
+      {/* Employer Router */}
       <Route path="/members" element={<Member />}></Route>
       <Route path="/members/profile/:userType/:slug" element={<Profile />} />
+      <Route path="/company-profile" element={<Employers />} />
+
+      {/* Developer Router */}
       <Route path="/developer-profile" element={<DeverloperProfile />} />
+      <Route path="/project-details" element={<ProjectDetail />} />
 
       {/* Project Router */}
       <Route path="/projects" element={<Project />} />
