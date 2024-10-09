@@ -1,36 +1,91 @@
 import React from "react";
-import BreadCrumb from "../../../../components/user/BreadCrumb/BreadCrumb";
-import "../layout.css";
-import Ava1 from "../../../../assets/images/avatar/avatar-2.jpg";
-import Ava2 from "../../../../assets/images/user/avatar-1.jpg";
-import Ava3 from "../../../../assets/images/user/avatar-3.jpg";
-import Ava4 from "../../../../assets/images/user/avatar-4.jpg";
-import Ava5 from "../../../../assets/images/user/avatar-5.jpg";
-import Ava6 from "../../../../assets/images/user/avatar-6.jpg";
-import Reviews from "../components/Reviews";
-import { Educations } from "../components/Educations";
-import Experiences from "../components/Experiences";
-import Detail from "../components/Detail";
+import BreadCrumb from "../../../components/user/BreadCrumb/BreadCrumb";
+import "../MyProfile/layout.css";
+import ChipList from "../MyProfile/components/Chip";
+import Attachments from "../MyProfile/components/Attachments";
+import Detail from "../MyProfile/components/Detail";
+import CompanyLogo from "../../../assets/images/default-logo.svg";
+import Reviews from "../MyProfile/components/Reviews";
+import Ava2 from "../../../assets/images/user/avatar-1.jpg";
+import Ava3 from "../../../assets/images/user/avatar-3.jpg";
+import Ava4 from "../../../assets/images/user/avatar-4.jpg";
+import Ava5 from "../../../assets/images/user/avatar-5.jpg";
+import Ava6 from "../../../assets/images/user/avatar-6.jpg";
 
-export const DeverloperProfile = () => {
+export const ProjectDetail = () => {
   const userData = {
-    image: Ava1,
-    name: "Michael Stewart",
-    description: "UI UX Designer",
+    image: CompanyLogo,
+    name: "Soft Technologies",
+    description: "Build a Coaching Website Product Store images",
     info: {
       address: "Los Angles",
       createdDate: "22 September 2023",
       rating: "5.0",
-      numsOfReviews: 245,
-      recommended: 89,
-      completed_project: 220,
-      ongoing_project: 10,
-      feedbacks: 78,
-      rehied: "Rehired",
-      response_time: 123, //in minutes
+      numsOfViews: 908,
+      numsOfProposals: 15,
+      freelancer_type: "Full-time",
+      project_type: "Hourly",
+      project_duration: "10-15 Hours",
+      experience: "Basic",
+      languages: ["English", "Arabic"],
+      language_fluency: "Conversational",
     },
     about:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    chips: [
+      {
+        title: "After Effects",
+        link: "",
+      },
+      {
+        title: "Illustrator",
+        link: "",
+      },
+      {
+        title: "HTML",
+        link: "",
+      },
+      {
+        title: "Whiteboard",
+        link: "",
+      },
+    ],
+    attachments: [
+      {
+        title: "sample.pdf",
+        size: 1123, //in kB
+        link: "",
+      },
+      {
+        title: "Website logo.jpg",
+        size: 1453, //in kB
+        link: "",
+      },
+      {
+        title: "Banner image.jpg",
+        size: 908, //in kB
+        link: "",
+      },
+      {
+        title: "Services image.jpg",
+        size: 1342, //in kB
+        link: "",
+      },
+    ],
+    tags: [
+      {
+        title: "Machine Learning",
+        link: "",
+      },
+      {
+        title: "AI Chatbot",
+        link: "",
+      },
+      {
+        title: "Virtual Assistant",
+        link: "",
+      },
+    ],
     experiences: [
       {
         title: "Team Leader",
@@ -75,7 +130,7 @@ export const DeverloperProfile = () => {
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
       },
     ],
-    reviews: [
+    project_proposals: [
       {
         author: "Theresa Phillips",
         imageSrc: Ava2,
@@ -138,17 +193,21 @@ export const DeverloperProfile = () => {
     <div>
       <div className="section-bread-crumb">
         <div className="container">
-          <BreadCrumb title="Freelancer Details" page="Freelancer Details" />
+          <BreadCrumb title="Project Details" page="Project Details" />
         </div>
       </div>
       <div class="content">
         <div class="container">
           <div class="row">
-            <div div class="custom-column">
-              <Detail userData={userData} />
-              <Experiences experiences={userData.experiences} />
-              <Educations educations={userData.educations} />
-              <Reviews reviews={userData.reviews} title={"Reviews"} />
+            <div class="custom-column">
+              <Detail userData={userData} page="employers" />
+              <ChipList title={"Skills Required"} chips={userData.chips} />
+              <Attachments attachments={userData.attachments} />
+              <ChipList title={"Tags"} chips={userData.tags} />
+              <Reviews
+                reviews={userData.project_proposals}
+                title={"Project Proposals"}
+              />
             </div>
           </div>
         </div>

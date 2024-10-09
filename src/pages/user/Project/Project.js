@@ -12,25 +12,25 @@ const Project = () => {
   const [error, setError] = useState(null);
 
   // Fetch data from API
-  useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        const response = await axios.get("http://localhost:5052/api/Post/getAllPosts"); // Replace with your actual API endpoint
-        if (response.data.success) {
-          setProjects(response.data.data);
-          setFilteredProjects(response.data.data); // Initially, all projects are displayed
-        } else {
-          setError("Failed to load projects.");
-        }
-      } catch (err) {
-        setError("Error fetching data.");
-      } finally {
-        setLoading(false);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchProjects = async () => {
+  //     try {
+  //       const response = await axios.get("http://localhost:5052/api/Post/getAllPosts"); // Replace with your actual API endpoint
+  //       if (response.data.success) {
+  //         setProjects(response.data.data);
+  //         setFilteredProjects(response.data.data); // Initially, all projects are displayed
+  //       } else {
+  //         setError("Failed to load projects.");
+  //       }
+  //     } catch (err) {
+  //       setError("Error fetching data.");
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
 
-    fetchProjects();
-  }, []);
+  //   fetchProjects();
+  // }, []);
 
   const handleFilterChange = (selectedFilters) => {
     let newFilteredProjects = [...projects];
@@ -95,7 +95,9 @@ const Project = () => {
                         name: project.title,
                         tags: project.skills.split(", "),
                         salary: `$${project.budgetOrSalary}`,
-                        avatar: `https://randomuser.me/api/portraits/men/${project.postId % 10}.jpg`,
+                        avatar: `https://randomuser.me/api/portraits/men/${
+                          project.postId % 10
+                        }.jpg`,
                       }}
                     />
                   ))
