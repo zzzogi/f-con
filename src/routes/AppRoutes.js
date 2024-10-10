@@ -12,7 +12,7 @@ import Member from "../pages/user/Member/Member";
 import { DeverloperProfile } from "../pages/user/MyProfile/Freelancers/Freelancers";
 import { Employers } from "../pages/user/MyProfile/Employers/Employers";
 import { ProjectDetail } from "../pages/user/ProjectDetail/ProjectDetail";
-import FreelancerBilling from "../pages/user/Membership/Freelancer";
+import MembershipPage from "../pages/user/Membership";
 import PostProject from "../pages/user/PostProject";
 
 const AppRoutes = () => {
@@ -34,11 +34,12 @@ const AppRoutes = () => {
 
       {/* Developer Router */}
       <Route path="/developer-profile" element={<DeverloperProfile />} />
-      <Route path="/project-details" element={<ProjectDetail />} />
-      <Route path="/freelancer-membership" element={<FreelancerBilling />} />
+
+      <Route path="/membership" element={<MembershipPage />} />
 
       {/* Project Router */}
       <Route path="/projects" element={<Project />} />
+      <Route path="/projects/:id" element={<ProjectDetail />} />
       <Route path="/post-project" element={<PostProject />} />
 
       {/* About Router */}
