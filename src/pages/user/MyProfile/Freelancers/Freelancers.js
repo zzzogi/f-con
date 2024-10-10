@@ -1,6 +1,7 @@
 import React from "react";
 import BreadCrumb from "../../../../components/user/BreadCrumb/BreadCrumb";
 import "../layout.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import Ava1 from "../../../../assets/images/avatar/avatar-2.jpg";
 import Ava2 from "../../../../assets/images/user/avatar-1.jpg";
 import Ava3 from "../../../../assets/images/user/avatar-3.jpg";
@@ -11,6 +12,7 @@ import Reviews from "../components/Reviews";
 import { Educations } from "../components/Educations";
 import Experiences from "../components/Experiences";
 import Detail from "../components/Detail";
+import Sidebar from "../components/Sidebar";
 
 export const DeverloperProfile = () => {
   const userData = {
@@ -144,12 +146,13 @@ export const DeverloperProfile = () => {
       <div class="content">
         <div class="container">
           <div class="row">
-            <div div class="custom-column">
+            <div class="col-lg-8 col-md-12">
               <Detail userData={userData} />
               <Experiences experiences={userData.experiences} />
               <Educations educations={userData.educations} />
               <Reviews reviews={userData.reviews} title={"Reviews"} />
             </div>
+            <Sidebar />
           </div>
         </div>
       </div>

@@ -12,6 +12,8 @@ import Member from "../pages/user/Member/Member";
 import { DeverloperProfile } from "../pages/user/MyProfile/Freelancers/Freelancers";
 import { Employers } from "../pages/user/MyProfile/Employers/Employers";
 import { ProjectDetail } from "../pages/user/ProjectDetail/ProjectDetail";
+import FreelancerBilling from "../pages/user/Membership/Freelancer";
+import PostProject from "../pages/user/PostProject";
 
 const AppRoutes = () => {
   return (
@@ -33,9 +35,11 @@ const AppRoutes = () => {
       {/* Developer Router */}
       <Route path="/developer-profile" element={<DeverloperProfile />} />
       <Route path="/project-details" element={<ProjectDetail />} />
+      <Route path="/freelancer-membership" element={<FreelancerBilling />} />
 
       {/* Project Router */}
       <Route path="/projects" element={<Project />} />
+      <Route path="/post-project" element={<PostProject />} />
 
       {/* About Router */}
       <Route path="/about-us" element={<About />} />
