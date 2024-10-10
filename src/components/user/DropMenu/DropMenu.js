@@ -31,6 +31,7 @@ const DropMenu = () => {
     },
     {
       sub: "Membership",
+      href: "/membership-plans",
       ref: [],
     },
     {
@@ -74,6 +75,7 @@ const DropMenu = () => {
     },
     {
       sub: "Membership",
+      href: "/freelancer-membership",
       ref: [],
     },
     {

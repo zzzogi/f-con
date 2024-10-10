@@ -11,6 +11,7 @@ import Ava3 from "../../../../assets/images/user/avatar-3.jpg";
 import Ava4 from "../../../../assets/images/user/avatar-4.jpg";
 import Ava5 from "../../../../assets/images/user/avatar-5.jpg";
 import Ava6 from "../../../../assets/images/user/avatar-6.jpg";
+import Sidebar from "../components/Sidebar";
 
 export const Employers = () => {
   const userData = {
@@ -199,7 +200,7 @@ export const Employers = () => {
       <div class="content">
         <div class="container">
           <div class="row">
-            <div class="custom-column">
+            <div class="col-lg-8 col-md-12">
               <Detail userData={userData} page="employers" />
               <ChipList title={"Skills Required"} chips={userData.chips} />
               <Attachments attachments={userData.attachments} />
@@ -209,6 +210,7 @@ export const Employers = () => {
                 title={"Project Proposals"}
               />
             </div>
+            <Sidebar />
           </div>
         </div>
       </div>

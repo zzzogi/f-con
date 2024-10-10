@@ -41,7 +41,10 @@ const Header = () => {
           <i className="bi bi-person-lock"></i>
           <span>Login</span>
         </div>
-        <div className="project-add">
+        <div
+          className="project-add"
+          onClick={() => onNavRoute("/post-project")}
+        >
           <i className="bi bi-plus"></i>
           Post a project
         </div>
