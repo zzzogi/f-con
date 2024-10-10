@@ -16,10 +16,6 @@ const DropMenu = () => {
       ],
     },
     {
-      sub: "Dashboard",
-      ref: [],
-    },
-    {
       sub: "My profile",
       href: "/company-profile",
       ref: [],
@@ -30,20 +26,7 @@ const DropMenu = () => {
       ref: [],
     },
     {
-      sub: "Membership",
-      href: "/membership-plans",
-      ref: [],
-    },
-    {
-      sub: "Milestones",
-      ref: [],
-    },
-    {
       sub: "Payments",
-      ref: [],
-    },
-    {
-      sub: "Setting",
       ref: [],
     },
   ];
@@ -52,20 +35,7 @@ const DropMenu = () => {
   const freelancer = [
     {
       sub: "Projects",
-      href: "",
-      ref: [
-        {
-          sub: "Projects",
-          href: "/projects",
-        },
-        {
-          sub: "Project Details",
-          href: "/project-details",
-        },
-      ],
-    },
-    {
-      sub: "Dashboard",
+      href: "/projects",
       ref: [],
     },
     {
@@ -74,20 +44,7 @@ const DropMenu = () => {
       ref: [],
     },
     {
-      sub: "Membership",
-      href: "/freelancer-membership",
-      ref: [],
-    },
-    {
-      sub: "Change Password",
-      ref: [],
-    },
-    {
       sub: "Payments",
-      ref: [],
-    },
-    {
-      sub: "Setting",
       ref: [],
     },
   ];
@@ -257,6 +214,14 @@ const DropMenu = () => {
               );
             })}
           </div>
+        </div>
+
+        {/* Membership */}
+        <div
+          className="nav-item nav-dropmenu"
+          onClick={() => onNavRoute("/membership")}
+        >
+          <span>Membership</span>
         </div>
 
         {/* Blogs */}

@@ -3,9 +3,9 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../layout.css";
 
-const PlanAndBill = () => {
+const Membership = () => {
   return (
-    <div class="col-xl-9 col-lg-8">
+    <div class="col-xl-12" style={{ marginTop: "24px" }}>
       <div class="dashboard-sec payout-section freelancer-statements plan-billing">
         <div class="page-title portfolio-title">
           <h3 class="mb-0">Plan & Billing</h3>
@@ -261,4 +261,4 @@ const PlanAndBill = () => {
   );
 };
 
-export default PlanAndBill;
+export default Membership;
