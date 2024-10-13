@@ -8,7 +8,6 @@ import { useForm } from "react-hook-form";
 import Documents from "./components/Documents";
 import clsx from "clsx";
 import { ToastContainer, toast } from "react-toastify";
-
 import "react-toastify/dist/ReactToastify.css";
 
 const PostProject = () => {
@@ -210,7 +209,13 @@ const PostProject = () => {
                         </li>
                       </ul>
                     </div>
-                    <div class="hours-rates">
+                    <div
+                      class={clsx(
+                        `hours-rates ${
+                          budget === "hourly_rate" ? "d-block" : "d-none"
+                        }`
+                      )}
+                    >
                       <div class="row">
                         <div class="col-lg-3 col-md-12">
                           <div class="mb-3">
@@ -219,6 +224,7 @@ const PostProject = () => {
                               type="text"
                               class="form-control"
                               placeholder="15"
+                              {...register("price_from")}
                             />
                           </div>
                         </div>
@@ -229,12 +235,19 @@ const PostProject = () => {
                               type="text"
                               class="form-control"
                               placeholder="250"
+                              {...register("price_to")}
                             />
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="fixed-rates d-none">
+                    <div
+                      class={clsx(
+                        `fixed-rates ${
+                          budget === "fixed_rate" ? "d-block" : "d-none"
+                        }`
+                      )}
+                    >
                       <div class="row">
                         <div class="col-lg-6 col-md-12">
                           <div class="mb-3">
@@ -243,6 +256,7 @@ const PostProject = () => {
                               type="text"
                               class="form-control"
                               placeholder="15"
+                              {...register("price")}
                             />
                           </div>
                         </div>

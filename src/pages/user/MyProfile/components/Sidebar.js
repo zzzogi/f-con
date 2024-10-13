@@ -11,6 +11,7 @@ import Close from "../../../../assets/images/icon/close.svg";
 import Eye from "../../../../assets/images/icon/eye.svg";
 import Pen from "../../../../assets/images/icon/edit-2.svg";
 import ChipList from "./Chip";
+import { ToastContainer, toast } from "react-toastify";
 
 const Sidebar = ({ chips }) => {
   const addRow = () => {
@@ -329,9 +330,14 @@ const Sidebar = ({ chips }) => {
           </div>
           <div>
             <a
-              data-bs-toggle="modal"
+              // data-bs-toggle="modal"
               href="#file"
               class="btn proposal-btn btn-primary"
+              onClick={() =>
+                toast("Gửi lời mời thành công!", {
+                  type: "success",
+                })
+              }
             >
               Send Invite
             </a>
@@ -349,6 +355,7 @@ const Sidebar = ({ chips }) => {
             ></iframe>
           </div>
         </div>
+        <ToastContainer />
       </div>
     </>
   );
