@@ -7,6 +7,7 @@ import Pending from "../../assets/images/icon/airplay.svg";
 import Chart from "../../assets/images/icon/pie-chart.svg";
 import BlogPost from "./Blog";
 import PendingProjects from "./Requests";
+import RevenueReport from "./Revenue";
 
 const Admin = () => {
   const [page, setPage] = useState("blog");
@@ -63,6 +64,8 @@ const Admin = () => {
             <BlogPost />
           ) : page === "project" ? (
             <PendingProjects />
+          ) : page === "revenue" ? (
+            <RevenueReport />
           ) : null}
         </div>
       </div>
