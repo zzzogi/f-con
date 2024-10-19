@@ -16,6 +16,7 @@ import MembershipPage from "../pages/user/Membership";
 import PostProject from "../pages/user/PostProject";
 import Admin from "../pages/admin";
 import BlogReview from "../pages/user/BlogReview";
+import UserSetting from "../pages/user/UserSetting";
 
 const AppRoutes = () => {
   return (
@@ -37,6 +38,10 @@ const AppRoutes = () => {
       {/* Developer Router */}
       <Route path="/developer-profile" element={<DeverloperProfile />} />
 
+      {/* User */}
+      <Route path="/user-setting" element={<UserSetting />} />
+
+      {/* Membership */}
       <Route path="/membership" element={<MembershipPage />} />
 
       {/* Project Router */}

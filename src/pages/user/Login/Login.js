@@ -5,17 +5,19 @@ import GoogleSVG from "../../../assets/images/icon/google-icon.svg";
 import FacebookSVG from "../../../assets/images/icon/fb-icon.svg";
 import AppleSVG from "../../../assets/images/icon/ios-icon.svg";
 import { useNavigate } from "react-router-dom";
+import { useUserContext } from "../../../context/userContext";
 
 const Login = () => {
+  const { userInfo, update } = useUserContext();
   const [inputTypeHidden, setInputTypeHidden] = useState({
     password: true,
   });
-  
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
-  
+
   const navigate = useNavigate();
 
   /* PASSWORD TYPE INPUT TOGGLE ------------------- */
@@ -32,31 +34,37 @@ const Login = () => {
   };
 
   /* HANDLE LOGIN API CALL ------------------- */
-  const handleLogin = async () => {
-    try {
-      const response = await fetch("http://localhost:5052/api/Auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          Username: formData.userName,
-          Password: formData.password,
-        }),
-      });
-      const result = await response.json();
+  // const handleLogin = async () => {
+  //   try {
+  //     const response = await fetch("http://localhost:5052/api/Auth/login", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({
+  //         Username: formData.userName,
+  //         Password: formData.password,
+  //       }),
+  //     });
+  //     const result = await response.json();
 
-      if (response.ok) {
-        console.log("Login successful", result);
-        alert("Login successful" );
-        navigate("/"); // Redirect to dashboard on successful login
-      } else {
-        console.log("Login failed", result);
-        alert(result.message || "Login failed. Please try again.");
-      }
-    } catch (error) {
-      console.error("Error during login:", error);
-    }
+  //     if (response.ok) {
+  //       console.log("Login successful", result);
+  //       alert("Login successful");
+  //       navigate("/"); // Redirect to dashboard on successful login
+  //     } else {
+  //       console.log("Login failed", result);
+  //       alert(result.message || "Login failed. Please try again.");
+  //     }
+  //   } catch (error) {
+  //     console.error("Error during login:", error);
+  //   }
+  // };
+
+  const handleLogin = () => {
+    update({ ...userInfo, userId: 1 });
+    alert("Đăng nhập thành công!");
+    navigate("/");
   };
 
   /* ON NAVIGATE TO PAGE ------------------- */
