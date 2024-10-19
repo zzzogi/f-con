@@ -1,8 +1,10 @@
 import React from "react";
 import "./DropMenu.css";
 import { useNavigate } from "react-router-dom";
+import { useUserContext } from "../../../context/userContext";
 
 const DropMenu = () => {
+  const { userInfo } = useUserContext();
   // Employers Data
   const employers = [
     {
@@ -93,9 +95,9 @@ const DropMenu = () => {
   return (
     <div className="DropMenu">
       <div className="nav-list">
-        <div className="nav-item nav-dropmenu" onClick={() => onNavRoute("/")}>
+        {/* <div className="nav-item nav-dropmenu" onClick={() => onNavRoute("/")}>
           <span>Home</span>
-        </div>
+        </div> */}
 
         {/* Employees */}
         <div className="nav-item nav-dropmenu">
@@ -283,12 +285,14 @@ const DropMenu = () => {
           </div>
         </div>
 
-        <div
-          className="nav-item nav-dropmenu"
-          onClick={() => (window.location.href = "/admin")}
-        >
-          <span>Admin console</span>
-        </div>
+        {userInfo.userRole === "admin" && (
+          <div
+            className="nav-item nav-dropmenu"
+            onClick={() => (window.location.href = "/admin")}
+          >
+            <span>Admin console</span>
+          </div>
+        )}
       </div>
     </div>
   );
