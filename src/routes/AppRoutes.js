@@ -17,6 +17,7 @@ import PostProject from "../pages/user/PostProject";
 import Admin from "../pages/admin";
 import BlogReview from "../pages/user/BlogReview";
 import UserSetting from "../pages/user/UserSetting";
+import Proposals from "../pages/user/Proposals";
 
 const AppRoutes = () => {
   return (
@@ -40,6 +41,9 @@ const AppRoutes = () => {
 
       {/* User */}
       <Route path="/user-setting" element={<UserSetting />} />
+
+      {/* Proposal */}
+      <Route path="/proposal" element={<Proposals />} />
 
       {/* Membership */}
       <Route path="/membership" element={<MembershipPage />} />

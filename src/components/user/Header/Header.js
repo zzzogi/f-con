@@ -40,18 +40,8 @@ const Header = () => {
           data={[
             {
               image: Avatar1,
-              message: "Kameshwaran S had shared a feedback with you.",
-              detailPage: "/",
-            },
-            {
-              image: Avatar1,
-              message: (
-                <p>
-                  Kameshwaran S had shared a{" "}
-                  <span style={{ color: "#7ac2fa" }}>feedback</span> with you.
-                </p>
-              ),
-              detailPage: "/",
+              message: "Kameshwaran S just sent you a proposal.",
+              detailPage: "/proposal",
             },
           ]}
         />
@@ -94,6 +84,14 @@ const Header = () => {
                   <span>Adam Levine</span>
                   <div className="nav-menu-container">
                     <div className="sub-nav-drop">
+                      <div className="nav-ref-container">
+                        <div
+                          className="sub-nav-item"
+                          onClick={() => onNavRoute("/proposal")}
+                        >
+                          My proposals
+                        </div>
+                      </div>
                       <div className="nav-ref-container">
                         <div
                           className="sub-nav-item"
